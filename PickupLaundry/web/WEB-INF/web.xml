@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
+    <servlet>
+        <servlet-name>valAddService</servlet-name>
+        <servlet-class>Processing.valAddService</servlet-class>
+    </servlet>
+    <servlet>
+        <servlet-name>InvoicePDFServlet</servlet-name>
+        <servlet-class>Processing.InvoicePDFServlet</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>valAddService</servlet-name>
+        <url-pattern>/valAddService</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>InvoicePDFServlet</servlet-name>
+        <url-pattern>/InvoicePDFServlet</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+			30
+		</session-timeout>
+    </session-config>
+    <servlet>
+        <servlet-name>ValAddService</servlet-name>
+        <jsp-file>/Admin/ManageService/valAddService.jsp</jsp-file>
+        <multipart-config>
+            <location>/assets/images</location>
+            <!-- Adjust the location as needed -->
+            <max-file-size>20848820</max-file-size>
+            <!-- Maximum file size allowed -->
+            <max-request-size>418018841</max-request-size>
+            <!-- Maximum request size allowed -->
+            <file-size-threshold>1024</file-size-threshold>
+            <!-- File size threshold -->
+        </multipart-config>
+    </servlet>
+</web-app>
